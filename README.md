@@ -55,8 +55,11 @@ A data flow diagram (DFD) is a graphical representation of the flow of data thro
 The prediction percentage and the accuracy of the bounding boxes in the results depends on the:
 
 1.Batch size
+
 2.Learning rate
+
 3.Number of training iterations
+
 Batch size: is the number of images that are trained per batch in one iteration of training.
 
 Learning Rate: is the training parameter that controls the size of weight and bias changes during learning.
