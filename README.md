@@ -9,30 +9,25 @@ Authenticating a customer in an online credit card transaction has been a challe
 A basic multi-factor authentication system typically involves requesting a user's username and password, which are something they know, as well as verifying their identity through a second factor, such as a text message sent to their phone, which is something they have. While this covers two factors of authentication, incorporating image recognition technology can add an additional layer of security to the login process without causing undue frustration or complexity for authorized users.
 
 # Proposed Solution
-In this project, we use standard implementation techniques, face recognition using Local Binary Pattern Histogram algorithm, which has been implemented using OpenCV Python.
+The standard implementation techniques for face recognition are employed in this project using the Local Binary Pattern Histogram (LBPH) algorithm, which has been implemented using OpenCV Python.
 
-LBPH: (Local Binary Pattern Histogram)
-Local Binary Pattern (LBP) is a simple yet very efficient texture operator which labels the pixels of an image by thresholding the neighborhood of each pixel and considers the result as a binary number. LBP is combined with histograms of oriented gradients (HOG) descriptor, it improves the detection performance considerably on some datasets. Parameters: the LBPH uses 4 parameters:
+LBP is a texture operator that assigns binary labels to the pixels of an image by thresholding the neighborhood of each pixel and then considering the result as a binary number.
+When combined with histograms of oriented gradients (HOG) descriptor, it significantly improves the detection performance on some datasets.
 
-Radius
+The LBPH algorithm employs four parameters, including radius, neighbors, grid X, and grid Y.
+Radius represents the radius around the central pixel, while neighbors represent the number of sample points used to build the circular local binary pattern.
 
-Neighbors
+Grid X and Grid Y represent the number of cells in the horizontal and vertical directions, respectively.
 
-Grid X
+The higher the number of cells, the finer the grid, and the higher the dimensionality of the resulting feature vector.
 
-Grid Y
+To train the algorithm, a dataset with facial images of people to be recognized is needed, along with an ID for each image.
 
-Radius: the radius is used to build the circular local binary pattern and represents the radius around the central pixel. It is usually set to 1.
+It is necessary to ensure that images of the same person have the same ID.
+The LBPH computational steps involve creating an intermediate image that highlights facial characteristics.
 
-Neighbors: the number of sample points to build the circular local binary pattern. Keep in mind: the more sample points you include, the higher the computational cost. It is usually set to 8.
+A sliding window based on the radius and neighbors parameters is used to achieve this intermediate image.
 
-Grid X: the number of cells in the horizontal direction. The more cells, the finer the grid, the higher the dimensionality of the resulting feature vector. It is usually set to 8.
-
-Grid Y: the number of cells in the vertical direction. The more cells, the finer the grid, the higher the dimensionality of the resulting feature vector. It is usually set to 8.
-
-Training the Algorithm: First, we need to train the algorithm. To do so, we need to use a dataset with the facial images of the people we want to recognize. We need to also set an ID (it may be a number or the name of the person) for each image, so the algorithm will use this information to recognize an input image and give you an output. Images of the same person must have the same ID. With the training set already constructed, let’s see the LBPH computational steps.
-
-Applying the LBP operation: The first computational step of the LBPH is to create an intermediate image that describes the original image in a better way, by highlighting the facial characteristics. To do so, the algorithm uses a concept of a sliding window, based on the parameters radius and neighbors.
 ![image](https://github.com/TanishaGiri/Facial-Recognition-for-transactions-or-OTP/assets/108277015/4a5f4dbb-64be-4a8c-9e1b-b60ea0401935)
 
 Extracting the Histograms: Now, using the image generated in the last step, we can use the Grid X and Grid Y parameters to divide the image into multiple grids.
