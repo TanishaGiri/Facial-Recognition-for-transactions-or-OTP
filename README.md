@@ -45,4 +45,20 @@ A data flow diagram (DFD) is a graphical representation of the flow of data thro
 
 ![image](https://github.com/TanishaGiri/Facial-Recognition-for-transactions-or-OTP/assets/108277015/c6a7d178-4a45-4d66-8b85-f733d9ba1d1d)
 
+1.User enters amount and confirms.
+2.Face verification is done by comparing input image with datasets.
+3.If face is successfully verified, payment is successful.
+4.If face verification fails, pin code is asked.
+5.If pin code is verified, face image is stored for investigation if concerned is raised and      payment is successful.
+6. If not verified, payment is declined.
+# Experiments and Results
+The prediction percentage and the accuracy of the bounding boxes in the results depends on the:
 
+1.Batch size
+2.Learning rate
+3.Number of training iterations
+Batch size: is the number of images that are trained per batch in one iteration of training.
+
+Learning Rate: is the training parameter that controls the size of weight and bias changes during learning.
+
+Number of Iterations: is the number of training iterations after which the network is optimally trained.
