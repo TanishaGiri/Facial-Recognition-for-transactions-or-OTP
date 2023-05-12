@@ -50,6 +50,14 @@ A data flow diagram (DFD) is a graphical representation of the flow of data thro
 4.If face verification fails, pin code is asked.
 5.If pin code is verified, face image is stored for investigation if concerned is raised and      payment is successful.
 6. If not verified, payment is declined.
+
+# Summary
+FaceDePay is a payment system for point of sale terminals that utilizes face recognition technology. The aim of this system is to eventually replace credit cards with biometric data, such as facial, retinal, and/or fingerprint scans.
+
+The backend folder includes all the code related to face recognition and the database system for payment implementation. On the other hand, the frontend folder contains the code for the user interface that facilitates POS payments.
+
+# How?
+The payment system called FaceDePay utilizes deep neural networks (DNNs) to detect and recognize faces at point of sale terminals, and then matches them with those stored in the banking system's database. This allows customers to purchase products from verified sellers almost instantaneously, while also enabling the splitting of bills. The system employs the dlib deep learning framework for face detection and recognition, and Flask for the web interface. The front end uses AJAX to communicate with the back end server, and all requests are SSL-encrypted.
 # Experiments and Results
 The prediction percentage and the accuracy of the bounding boxes in the results depends on the:
 
